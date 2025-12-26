@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rapa05.vercel.app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Warna latar gelap */
+            color: white;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px; /* Ukuran mobile-first */
+            background-image: radial-gradient(circle at 2px 2px, #1e293b 1px, transparent 0);
+            background-size: 24px 24px; /* Pola grid halus */
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Navbar Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile img {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            background-color: #334155;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #f97316; /* Warna Oranye */
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logout-btn {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #cbd5e1;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Stats Badge Section */
+        .status-badge {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            background-color: #1e293b;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Main Content */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: #f97316;
+        }
+
+        .download-count-card {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #334155;
+        }
+
+        .download-count-card p {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .count-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fbbf24; /* Warna Kuning */
+        }
+
+        .description {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        /* Download Button */
+        .btn-download {
+            background-color: #f97316;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-weight: 800;
+            transition: transform 0.2s;
+        }
+
+        .btn-download:active {
+            transform: scale(0.98);
+        }
+
+        .btn-download .main-text {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-download .sub-text {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            font-weight: normal;
+        }
+
+        /* Floating Sound Icon */
+        .sound-icon {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            background-color: #334155;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="profile">
+                <img src="foto.jpg" alt="Logo Mas Rapa">
+                <div class="logo-text">RAPA <span>GAMES</span></div>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="logout-btn">➔ LOGOUT</a>
+                <div style="font-size: 1.5rem;">☰</div>
+            </div>
+        </header>
+
+        <div class="status-badge">
+            <div class="dot"></div> STATUS: <span style="color:#22c55e">ONLINE</span>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-item">⚡ VER: 1.0.0</div>
+            <div class="stat-item">👁 VISIT: 612.034</div>
+        </div>
+
+        <h1>MAS <span>RAPA GAMES</span></h1>
+
+        <div class="download-count-card">
+            <p>BERHASIL DOWNLOAD</p>
+            <div class="count-number">53.836</div>
+        </div>
+
+        <div class="description">
+            Untuk Download Langsung saja <b> Ke Website "WELCOME STRENGER" </b>Login Ke Strenger Yang Ada Di Bawah Ini ya Bro.thanks ©masrapa
+        </div>
+
+        <a href="#" class="btn-download">
+    <div class="main-text">
+        <img src="logo tanda panah.png" style="width: 20px;"> LOGIN
+    </div>
+    <div class="sub-text">(strenger.)</div>
+</a>
+
+
+        <div class="sound-icon">🔊</div>
+    </div>
+
+</body>
+</html>
